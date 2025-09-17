@@ -1,11 +1,10 @@
-using System.Linq;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using fox_internet_security.ViewModels;
 using fox_internet_security.Views;
+using System.Linq;
 
 namespace fox_internet_security
 {

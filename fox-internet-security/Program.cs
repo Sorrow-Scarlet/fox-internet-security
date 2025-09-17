@@ -1,5 +1,6 @@
-﻿using System;
-using Avalonia;
+﻿using Avalonia;
+using Avalonia.Svg.Skia;
+using System;
 
 namespace fox_internet_security
 {
@@ -14,9 +15,12 @@ namespace fox_internet_security
 
         // Avalonia configuration, don't remove; also used by visual designer.
         public static AppBuilder BuildAvaloniaApp()
-            => AppBuilder.Configure<App>()
+        {
+            GC.KeepAlive(typeof(SvgImageExtension).Assembly);
+            return AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                .WithInterFont()
-                .LogToTrace();
-    }
+                .LogToTrace()
+                .WithInterFont();
+        }
+    }   
 }

@@ -1,7 +1,7 @@
-using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using fox_internet_security.ViewModels;
+using System;
 
 namespace fox_internet_security
 {

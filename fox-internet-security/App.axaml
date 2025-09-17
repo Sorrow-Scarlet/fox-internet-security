@@ -11,5 +11,12 @@
   
     <Application.Styles>
         <FluentTheme />
+		<StyleInclude Source="/StyleRes/DefaultStyle.axaml"></StyleInclude>
     </Application.Styles>
+
+	<Application.Resources>
+		<FontFamily x:Key="MaterialIcons">/Assets/Fonts/MaterialSymbolsRounded.ttf#Material Symbols Rounded</FontFamily>
+		
+	</Application.Resources>
+
 </Application>

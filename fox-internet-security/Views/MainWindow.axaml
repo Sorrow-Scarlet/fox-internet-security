@@ -3,11 +3,18 @@
         xmlns:vm="using:fox_internet_security.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="720" d:DesignHeight="450"
+		Width="720" Height="450"
         x:Class="fox_internet_security.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="fox_internet_security">
+        Icon="/Assets/fis-logo.ico"
+		TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        Title="fox_internet_security"
+        ExtendClientAreaToDecorationsHint="True"
+		CanResize="False"
+		FontFamily="{DynamicResource ResourceKey=SimpleIcons}"
+		>
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -15,6 +22,91 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
+	<!--布局-->
+	<Grid>
+		<!--云母-->
+		<ExperimentalAcrylicBorder IsHitTestVisible="False">
+			<ExperimentalAcrylicBorder.Material>
+				<ExperimentalAcrylicMaterial
+					TintColor="#FFFFFF"
+					TintOpacity="1"
+					MaterialOpacity="0.1" />
+			</ExperimentalAcrylicBorder.Material>
+		</ExperimentalAcrylicBorder>
+		<!-- Grid建两列，经典左右布局，暂时不考虑收缩面板，没有全屏的必要 -->
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="200"></ColumnDefinition>
+			<ColumnDefinition Width="520"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<!-- 左侧菜单栏 - 灰色背景 -->
+		<Border Background="#70D0D0D0" HorizontalAlignment="Stretch" Width="200" Padding="10" Grid.Column="0">
+			<!-- 堆叠排布 -->
+				<StackPanel Spacing="20" VerticalAlignment="Center">
+					<!-- 五个选项的每个按钮-->
+					<Button Classes="sideMenu" HorizontalAlignment="Stretch">
+						<StackPanel Orientation="Horizontal">
+							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xf7d4;"/>
+							<Label Classes ="akko" Content="概述"/>
+						</StackPanel>
+					</Button>
+					<Button Classes="sideMenu" HorizontalAlignment="Stretch">
+						<StackPanel Orientation="Horizontal">
+							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xe923;"/>
+							<Label Classes ="akko" Content="更新"/>
+						</StackPanel>
+					</Button>
+					<Button Classes="sideMenu" HorizontalAlignment="Stretch">
+						<StackPanel Orientation="Horizontal">
+							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xf4c9;"/>
+							<Label Classes ="akko" Content="扫描"/>
+						</StackPanel>
+					</Button>
+					<Button Classes="sideMenu" HorizontalAlignment="Stretch">
+						<StackPanel Orientation="Horizontal">
+							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xe149;"/>
+							<Label Classes ="akko" Content="沙盒"/>
+						</StackPanel>
+					</Button>
+					<Button Classes="sideMenu" HorizontalAlignment="Stretch">
+						<StackPanel Orientation="Horizontal">
+							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xe8b8;"/>
+							<Label Classes ="akko" Content="设置"/>
+						</StackPanel>
+					</Button>
+				</StackPanel>
+		</Border>
+		<!-- 右侧主内容区, -->
+		<Border Background="#80FFFFFF"  Padding="20" Grid.Column="1" IsHitTestVisible="False">
+			<!-- LOGO & 文字 -->
+			<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+				<Image Source="{SvgImage /Assets/fis-logo.svg}" Width="100" Height="100" />
+				<TextBlock Text="一切正常" FontSize="24" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+					
+					<!-- 时间线的背景 -->
+					<Border Background="#70D0D0D0" Width="350" VerticalAlignment="Bottom" CornerRadius="10" Margin="0,20,0,0">
+						<!-- 纵向堆叠里嵌套横向堆叠 -->
+						<StackPanel>
+							<StackPanel Orientation="Horizontal">
+								<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineHead" Content="&#xf6b8;"/>
+								<Label Classes ="akkoTimeLineHead" Content="时间线" FontWeight="Bold"/>
+							</StackPanel>
+							<StackPanel Orientation="Horizontal">
+								<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf4b5;"/>
+								<Label Classes ="akkoTimeLineText" Content="扫描了Test.txt"/>
+							</StackPanel>
+							<StackPanel Orientation="Horizontal">
+								<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf4b5;"/>
+								<Label Classes ="akkoTimeLineText" Content="更新了病毒库"/>
+							</StackPanel>
+							<StackPanel Orientation="Horizontal">
+								<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf4b5;"/>
+								<Label Classes ="akkoTimeLineText" Content="清空了沙盒"/>
+							</StackPanel>
+						</StackPanel>
+						
+					</Border>
+			</StackPanel>
+		</Border>
+	</Grid>
 </Window>

@@ -1,21 +1,21 @@
 ![HeadIMG](/HEAD.png)
 
-## 状态
+# 概述
 
 ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)
-
-# 概述
+![GNU GPL-V3 License](https://img.shields.io/badge/%20license-GNU%20GPL%20v3-brightgreen.svg?style=flat-square)
 
 简单，能用的安全软件
 
+对于任何用户来讲，结合 "最新版中枢神经系统" & CommonSense™2025 使用
+
 # 大饼
 
-- [ ] UI + 深色模式
-- [ ] 独立引擎
-- [ ] 扫描器
-- [ ] 邮件实时防护
+- [ ] UI
+- [ ] yara 扫描器
+- [ ] VirusTotal 云扫描
+- [ ] 邮件实时扫描
 - [ ] 沙箱
-- [ ] VirusTotal 云引擎
 - [ ] 指定病毒库(本地服务器? 内网服务器?)
 
 # 满足下列需求再用
@@ -28,9 +28,4 @@
 
 # 引用
 
-CC0 - ICON: https://github.com/simple-icons/simple-icons  
-MIT - GUI: https://github.com/ocornut/imgui
-
-# 许可证
-
-![GNU GPL-V3 License](https://img.shields.io/badge/%20license-GNU%20GPL%20v3-brightgreen.svg?style=flat-square)
+CC0 - ICON: https://github.com/simple-icons/simple-icons
