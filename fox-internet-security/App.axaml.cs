@@ -13,6 +13,7 @@ namespace fox_internet_security
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
+            DataTemplates.Add(new ViewLocator());
         }
 
         public override void OnFrameworkInitializationCompleted()

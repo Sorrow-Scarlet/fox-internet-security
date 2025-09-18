@@ -2,6 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:fox_internet_security.ViewModels"
+			 x:DataType="vm:UpdateViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="fox_internet_security.UpdateView">
 
@@ -10,7 +12,7 @@
 		<!-- LOGO & 文字 -->
 		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 			<Image Source="{SvgImage /Assets/fis-logo.svg}" Width="100" Height="100" />
-			<TextBlock Text="一切正常" FontSize="24" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+			<TextBlock Text="更新" FontSize="24" Margin="0,20,0,0" HorizontalAlignment="Center"/>
 
 			<!-- 时间线的背景 -->
 			<Border Background="#70D0D0D0" Width="350" VerticalAlignment="Bottom" CornerRadius="10" Margin="0,40,0,0">

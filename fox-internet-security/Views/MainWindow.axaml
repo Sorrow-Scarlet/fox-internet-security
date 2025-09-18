@@ -65,7 +65,7 @@
 					<Button Classes="sideMenu" HorizontalAlignment="Stretch">
 						<StackPanel Orientation="Horizontal">
 							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xe149;"/>
-							<Label Classes ="akko" Content="沙盒"/>
+							<Label Classes ="akko" Content="工具"/>
 						</StackPanel>
 					</Button>
 					<Button Classes="sideMenu" HorizontalAlignment="Stretch">
@@ -78,9 +78,7 @@
 		</Border>
 		
 		<!-- 右侧主内容区, -->
-		<ContentControl Grid.Column="1">
-			<view:OverviewView></view:OverviewView>
-		</ContentControl>
+		<ContentControl Grid.Column="1" Content="{Binding CurrentPage}"/>
 		
 	</Grid>
 </Window>

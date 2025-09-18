@@ -2,40 +2,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:fox_internet_security.ViewModels"
+			 x:DataType="vm:SettingViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="fox_internet_security.SettingView">
 
 	<!-- 右侧UI，此为设置 -->
-	<Border Background="#80FFFFFF"  Padding="20" Grid.Column="1" IsHitTestVisible="False">
-		<!-- LOGO & 文字 -->
-		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-			<Image Source="{SvgImage /Assets/fis-logo.svg}" Width="100" Height="100" />
-			<TextBlock Text="一切正常" FontSize="24" Margin="0,20,0,0" HorizontalAlignment="Center"/>
 
-			<!-- 时间线的背景 -->
-			<Border Background="#70D0D0D0" Width="350" VerticalAlignment="Bottom" CornerRadius="10" Margin="0,40,0,0">
-				<!-- 纵向堆叠里嵌套横向堆叠 -->
-				<StackPanel>
-					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineHead" Content="&#xf6b8;"/>
-						<Label Classes ="akkoTimeLineHead" Content="时间线" FontWeight="Bold"/>
-					</StackPanel>
-					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf4b5;"/>
-						<Label Classes ="akkoTimeLineText" Content="扫描了Test.txt"/>
-					</StackPanel>
-					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf4b5;"/>
-						<Label Classes ="akkoTimeLineText" Content="更新了病毒库"/>
-					</StackPanel>
-					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf4b5;"/>
-						<Label Classes ="akkoTimeLineText" Content="清空了沙盒"/>
-					</StackPanel>
-				</StackPanel>
+	<ScrollViewer>
+		<Border Background="#80FFFFFF"  Padding="20" Grid.Column="1" IsHitTestVisible="False">
+			<!-- 上为色块+沙盒路径,沙盒内容；下为沙盒选项 -->
+			<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 
-			</Border>
-		</StackPanel>
-	</Border>
+				<Border Background="#70D0D0D0" Height="200" Width="350" VerticalAlignment="Center" CornerRadius="10" Margin="0,0,0,0">
+					<StackPanel>
+						<StackPanel Orientation="Horizontal">
+							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineHead" Content="&#xf4c9;"/>
+							<Label Classes ="akkoTimeLineHead" Content="设置占位" FontWeight="Bold"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal">
+							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf475;"/>
+							<Label Classes ="akkoTimeLineText" Content="QQ"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal">
+							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf475;"/>
+							<Label Classes ="akkoTimeLineText" Content="VST set"/>
+						</StackPanel>
+					</StackPanel>
+				</Border>
+			</StackPanel>
+		</Border>
+	</ScrollViewer>
+
 
 </UserControl>

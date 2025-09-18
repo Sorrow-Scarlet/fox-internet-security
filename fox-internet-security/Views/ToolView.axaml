@@ -3,11 +3,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="using:fox_internet_security.ViewModels"
-			 x:DataType="vm:ScanViewModel"
+			 x:DataType="vm:ToolViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="fox_internet_security.ScanView">
+             x:Class="fox_internet_security.ToolView">
 
-	<!-- 右侧UI，此为扫描 -->
+	<!-- 沙盒功能后续可能不会开发，会改成工具集，暂时占位 -->
+	<!-- 右侧UI，此为沙盒 -->
 	<Border Background="#80FFFFFF"  Padding="20" Grid.Column="1" IsHitTestVisible="False">
 		<!-- 上为色块+沙盒路径,沙盒内容；下为沙盒选项 -->
 		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -15,8 +16,8 @@
 			<Border Background="#70D0D0D0" Height="200" Width="350" VerticalAlignment="Center" CornerRadius="10" Margin="0,0,0,0">
 				<StackPanel>
 					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineHead" Content="&#xf4c9;"/>
-						<Label Classes ="akkoTimeLineHead" Content="将文件拖拽至此自动扫描" FontWeight="Bold"/>
+						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineHead" Content="&#xe149;"/>
+						<Label Classes ="akkoTimeLineHead" Content="工具" FontWeight="Bold"/>
 					</StackPanel>
 					<StackPanel Orientation="Horizontal">
 						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf475;"/>
@@ -34,24 +35,18 @@
 
 			<!-- 纵向堆叠里嵌套横向堆叠 -->
 			<StackPanel Orientation="Horizontal" Spacing="100" HorizontalAlignment="Center">
-				
-				<Button>
-					<Border Background="#70D0D0D0" Width="100" Height="100" CornerRadius="10" Margin="0,40,0,0">
-						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-
-							<Label Classes ="akkoTimeLineHead" Content="路径扫描" FontWeight="Bold"/>
-						</StackPanel>
-					</Border>
-				</Button>
-
-				<Button>
-					<Border Background="#70D0D0D0" Width="100" Height="100" CornerRadius="10" Margin="0,40,0,0">
-						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-
-							<Label Classes ="akkoTimeLineHead" Content="快速扫描" FontWeight="Bold"/>
-						</StackPanel>
-					</Border>
-				</Button>
+				<Border Background="#70D0D0D0" Width="100" Height="100" VerticalAlignment="Bottom" CornerRadius="10" Margin="0,40,0,0">
+					<StackPanel Orientation="Horizontal">
+						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineHead" Content="&#xf6b8;"/>
+						<Label Classes ="akkoTimeLineHead" Content="删除" FontWeight="Bold"/>
+					</StackPanel>
+				</Border>
+				<Border Background="#70D0D0D0" Width="100" Height="100" VerticalAlignment="Bottom" CornerRadius="10" Margin="0,40,0,0">
+					<StackPanel Orientation="Horizontal">
+						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineHead" Content="&#xf6b8;"/>
+						<Label Classes ="akkoTimeLineHead" Content="新建" FontWeight="Bold"/>
+					</StackPanel>
+				</Border>
 
 			</StackPanel>
 		</StackPanel>

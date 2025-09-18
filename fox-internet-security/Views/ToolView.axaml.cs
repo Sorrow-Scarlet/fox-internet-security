@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace fox_internet_security;
 
-public partial class SandboxView : UserControl
+public partial class ToolView : UserControl
 {
-    public SandboxView()
+    public ToolView()
     {
         InitializeComponent();
     }
