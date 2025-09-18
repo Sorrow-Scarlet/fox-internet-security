@@ -23,6 +23,7 @@
 		<Setter Property="Margin" Value="35,0,0,0"/>
 	</Style>
 	<Style Selector="Label.akkoTimeLineHead">
+		<Setter Property="FontFamily" Value="{DynamicResource ResourceKey=MaterialIcons}"/>
 		<Setter Property="VerticalAlignment" Value="Center"/>
 		<Setter Property="FontSize" Value="20"/>
 	</Style>
@@ -37,7 +38,6 @@
 		<Setter Property="FontWeight" Value="Heavy"/>
 	</Style>
 	<Style Selector="Label.iconTimeLineText">
-		<Setter Property="FontFamily" Value="{DynamicResource ResourceKey=MaterialIcons}"/>
 		<Setter Property="VerticalAlignment" Value="Center"/>
 		<Setter Property="FontSize" Value="18"/>
 		<Setter Property="FontWeight" Value="Heavy"/>
