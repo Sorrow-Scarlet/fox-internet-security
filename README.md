@@ -5,7 +5,7 @@
 ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)
 ![GNU GPL-V3 License](https://img.shields.io/badge/%20license-GNU%20GPL%20v3-brightgreen.svg?style=flat-square)
 
-简单，能用的安全软件
+基于 Avalonia UI 的、简单、能用的安全软件
 
 对于任何用户来讲，结合 "最新版中枢神经系统" & CommonSense™2025 使用
 
@@ -26,6 +26,33 @@
 4. 我想要个听话干净的杀软
 5. 我想要个跑起来快，有点用但不多的玩应
 
+# 使用
+
+## 下载
+
+- 对于普通用户
+
+  1. 找到 Release
+  2. 下载最新的，符合自己操作系统的版本
+  3. 解压并安装
+
+- 对于开发者
+
+```
+git clone https://github.com/Sorrow-Scarlet/fox-internet-security
+```
+
+- 对于源码编译用户
+
+```
+git clone --depth 1 https://github.com/Sorrow-Scarlet/fox-internet-security
+```
+
+## 用法
+
+等待后续更新
+
 # 引用
 
-CC0 - ICON: https://github.com/simple-icons/simple-icons
+CC0 - ICON: https://github.com/simple-icons/simple-icons  
+Apache 2.0 - ICON: https://github.com/google/material-design-icons
