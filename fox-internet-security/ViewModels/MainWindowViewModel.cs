@@ -24,31 +24,31 @@ namespace fox_internet_security.ViewModels
 
 
         [RelayCommand]
-        private GoToOverview()
+        private void GoToOverview()
         {
             CurrentPage = _overviewView;
         }
 
         [RelayCommand]
-        private GoToUpdate()
+        private void GoToUpdate()
         {
             CurrentPage = _updateView;
         }
 
         [RelayCommand]
-        private GoToScan()
+        private void GoToScan()
         {
             CurrentPage = _scanView;
         }
 
         [RelayCommand]
-        private GoToTool()
+        private void GoToTool()
         {
             CurrentPage = _toolView;
         }
 
         [RelayCommand]
-        private GoToSetting()
+        private void GoToSetting()
         {
             CurrentPage = _settingView;
         }
