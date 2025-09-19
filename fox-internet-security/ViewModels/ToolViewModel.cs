@@ -6,7 +6,7 @@ namespace fox_internet_security.ViewModels
 {
     public partial class ToolViewModel : ViewModelBase
     {
-        public string Toolview { get; set; } = "工具";
+        public string ToolView { get; set; } = "工具";
 
     }
 }

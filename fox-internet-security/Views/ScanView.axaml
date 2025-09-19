@@ -5,7 +5,7 @@
 			 xmlns:vm="using:fox_internet_security.ViewModels"
 			 x:DataType="vm:ScanViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="fox_internet_security.ScanView">
+             x:Class="fox_internet_security.Views.ScanView">
 
 	<!-- 右侧UI，此为扫描 -->
 	<Border Background="#80FFFFFF"  Padding="20" Grid.Column="1" IsHitTestVisible="False">

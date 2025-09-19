@@ -44,31 +44,31 @@
 			<!-- 堆叠排布 -->
 				<StackPanel Spacing="20" VerticalAlignment="Center">
 					<!-- 五个选项的每个按钮-->
-					<Button Classes="sideMenu" HorizontalAlignment="Stretch">
+					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToOverviewCommand}">
 						<StackPanel Orientation="Horizontal">
 							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xf7d4;"/>
 							<Label Classes ="akko" Content="概述"/>
 						</StackPanel>
 					</Button>
-					<Button Classes="sideMenu" HorizontalAlignment="Stretch">
+					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToUpdateCommand}" >
 						<StackPanel Orientation="Horizontal">
 							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xe923;"/>
 							<Label Classes ="akko" Content="更新"/>
 						</StackPanel>
 					</Button>
-					<Button Classes="sideMenu" HorizontalAlignment="Stretch">
+					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToScanCommand}">
 						<StackPanel Orientation="Horizontal">
 							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xf4c9;"/>
 							<Label Classes ="akko" Content="扫描"/>
 						</StackPanel>
 					</Button>
-					<Button Classes="sideMenu" HorizontalAlignment="Stretch">
+					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToToolCommand}">
 						<StackPanel Orientation="Horizontal">
 							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xe149;"/>
 							<Label Classes ="akko" Content="工具"/>
 						</StackPanel>
 					</Button>
-					<Button Classes="sideMenu" HorizontalAlignment="Stretch">
+					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToSettingCommand}">
 						<StackPanel Orientation="Horizontal">
 							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xe8b8;"/>
 							<Label Classes ="akko" Content="设置"/>

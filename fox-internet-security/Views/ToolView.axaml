@@ -5,7 +5,7 @@
 			 xmlns:vm="using:fox_internet_security.ViewModels"
 			 x:DataType="vm:ToolViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="fox_internet_security.ToolView">
+             x:Class="fox_internet_security.Views.ToolView">
 
 	<!-- 沙盒功能后续可能不会开发，会改成工具集，暂时占位 -->
 	<!-- 右侧UI，此为沙盒 -->

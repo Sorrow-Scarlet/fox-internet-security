@@ -6,7 +6,7 @@ namespace fox_internet_security.ViewModels
 {
     public partial class ScanViewModel : ViewModelBase
     {
-        public string Scanview { get; set; } = "扫描";
+        public string ScanView { get; set; } = "扫描";
 
     }
 }

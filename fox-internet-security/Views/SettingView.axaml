@@ -5,7 +5,7 @@
 			 xmlns:vm="using:fox_internet_security.ViewModels"
 			 x:DataType="vm:SettingViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="fox_internet_security.SettingView">
+             x:Class="fox_internet_security.Views.SettingView">
 
 	<!-- 右侧UI，此为设置 -->
 
