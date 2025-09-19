@@ -7,49 +7,160 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="fox_internet_security.Views.ToolView">
 
-	<!-- 沙盒功能后续可能不会开发，会改成工具集，暂时占位 -->
-	<!-- 右侧UI，此为沙盒 -->
-	<Border Background="#80FFFFFF"  Padding="20" Grid.Column="1" IsHitTestVisible="False">
-		<!-- 上为色块+沙盒路径,沙盒内容；下为沙盒选项 -->
-		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 
-			<Border Background="#70D0D0D0" Height="200" Width="350" VerticalAlignment="Center" CornerRadius="10" Margin="0,0,0,0">
-				<StackPanel>
-					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineHead" Content="&#xe149;"/>
-						<Label Classes ="akkoTimeLineHead" Content="工具" FontWeight="Bold"/>
-					</StackPanel>
-					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf475;"/>
-						<Label Classes ="akkoTimeLineText" Content="QQ"/>
-					</StackPanel>
-					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf475;"/>
-						<Label Classes ="akkoTimeLineText" Content="VST set"/>
-					</StackPanel>
-				</StackPanel>
-			</Border>
+	<!-- 右侧UI，此为工具页面 -->
+	<Grid RowDefinitions="30,*">
+		<!-- 标题栏区域 -->
+		<Panel Background="#80FFFFFF" IsHitTestVisible="False" Grid.Row="0"></Panel>
 
+		<!-- 内容区域 -->
+		<ScrollViewer Grid.Row="1"
+					  Background="#80FFFFFF"
+					  Padding="20">
+			<StackPanel Margin="20">
+				<!-- 工具卡片容器 -->
+				<Border Background="#80FFFFFF"
+						CornerRadius="8"
+						Padding="15"
+						Margin="0,0,0,20"
+						BoxShadow="0 2 5 0 #20000000">
+					<StackPanel>
 
-			<!-- 第二栏横向堆叠，2个选项：删除，新建沙盒 -->
+						<!-- 工具卡片列表 -->
+						<StackPanel Spacing="15">
+							<!-- 工具卡片1：系统清理 -->
+							<Border Background="#F5F5F5"
+									CornerRadius="6"
+									Padding="15">
+								<Grid ColumnDefinitions="Auto,*,Auto">
+									<!-- 工具图标 -->
+									<TextBlock Text="🧹"
+											  FontSize="24"
+											  VerticalAlignment="Center"/>
 
-			<!-- 纵向堆叠里嵌套横向堆叠 -->
-			<StackPanel Orientation="Horizontal" Spacing="100" HorizontalAlignment="Center">
-				<Border Background="#70D0D0D0" Width="100" Height="100" VerticalAlignment="Bottom" CornerRadius="10" Margin="0,40,0,0">
-					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineHead" Content="&#xf6b8;"/>
-						<Label Classes ="akkoTimeLineHead" Content="删除" FontWeight="Bold"/>
+									<!-- 工具信息 -->
+									<StackPanel Grid.Column="1" Margin="15,0">
+										<TextBlock Text="系统清理"
+												   FontWeight="Medium"
+												   FontSize="16"
+												   Foreground="#333333"/>
+										<TextBlock Text="清理垃圾文件和临时数据"
+												   FontSize="13"
+												   Foreground="#666666"
+												   Margin="0,3"/>
+									</StackPanel>
+
+									<!-- 操作按钮 -->
+									<Button Grid.Column="2"
+											Content="立即扫描"
+											Classes="accent"
+											HorizontalAlignment="Right"
+											VerticalAlignment="Center"/>
+								</Grid>
+							</Border>
+
+							<!-- 工具卡片2：启动项管理 -->
+							<Border Background="#F5F5F5"
+									CornerRadius="6"
+									Padding="15">
+								<Grid ColumnDefinitions="Auto,*,Auto">
+									<!-- 工具图标 -->
+									<TextBlock Text="🚀"
+											  FontSize="24"
+											  VerticalAlignment="Center"/>
+
+									<!-- 工具信息 -->
+									<StackPanel Grid.Column="1" Margin="15,0">
+										<TextBlock Text="启动项管理"
+												   FontWeight="Medium"
+												   FontSize="16"
+												   Foreground="#333333"/>
+										<TextBlock Text="管理系统开机启动项"
+												   FontSize="13"
+												   Foreground="#666666"
+												   Margin="0,3"/>
+									</StackPanel>
+
+									<!-- 状态指示器 -->
+									<StackPanel Grid.Column="2"
+												Orientation="Horizontal"
+												Spacing="5"
+												HorizontalAlignment="Right"
+												VerticalAlignment="Center">
+										<Ellipse Width="8" Height="8" Fill="#4CAF50"/>
+										<TextBlock Text="已启用"
+												   FontSize="12"
+												   Foreground="#4CAF50"/>
+									</StackPanel>
+								</Grid>
+							</Border>
+
+							<!-- 工具卡片3：网络防护 -->
+							<Border Background="#F5F5F5"
+									CornerRadius="6"
+									Padding="15">
+								<Grid ColumnDefinitions="Auto,*,Auto">
+									<!-- 工具图标 -->
+									<TextBlock Text="🛡️"
+											  FontSize="24"
+											  VerticalAlignment="Center"/>
+
+									<!-- 工具信息 -->
+									<StackPanel Grid.Column="1" Margin="15,0">
+										<TextBlock Text="网络防护"
+												   FontWeight="Medium"
+												   FontSize="16"
+												   Foreground="#333333"/>
+										<TextBlock Text="监控网络连接和威胁"
+												   FontSize="13"
+												   Foreground="#666666"
+												   Margin="0,3"/>
+									</StackPanel>
+
+									<!-- 开关控件 -->
+									<ToggleSwitch Grid.Column="2"
+												  IsChecked="True"
+												  HorizontalAlignment="Right"
+												  VerticalAlignment="Center"/>
+								</Grid>
+							</Border>
+
+							<!-- 工具卡片4：隐私保护 -->
+							<Border Background="#F5F5F5"
+									CornerRadius="6"
+									Padding="15">
+								<Grid ColumnDefinitions="Auto,*,Auto">
+									<!-- 工具图标 -->
+									<TextBlock Text="🔒"
+											  FontSize="24"
+											  VerticalAlignment="Center"/>
+
+									<!-- 工具信息 -->
+									<StackPanel Grid.Column="1" Margin="15,0">
+										<TextBlock Text="隐私保护"
+												   FontWeight="Medium"
+												   FontSize="16"
+												   Foreground="#333333"/>
+										<TextBlock Text="保护敏感数据和隐私信息"
+												   FontSize="13"
+												   Foreground="#666666"
+												   Margin="0,3"/>
+									</StackPanel>
+
+									<!-- 操作按钮 -->
+									<Button Grid.Column="2"
+											Content="配置"
+											Classes="default"
+											HorizontalAlignment="Right"
+											VerticalAlignment="Center"/>
+								</Grid>
+							</Border>
+						</StackPanel>
 					</StackPanel>
 				</Border>
-				<Border Background="#70D0D0D0" Width="100" Height="100" VerticalAlignment="Bottom" CornerRadius="10" Margin="0,40,0,0">
-					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineHead" Content="&#xf6b8;"/>
-						<Label Classes ="akkoTimeLineHead" Content="新建" FontWeight="Bold"/>
-					</StackPanel>
-				</Border>
-
 			</StackPanel>
-		</StackPanel>
-	</Border>
+		</ScrollViewer>
+	</Grid>
+	
 
 </UserControl>

@@ -12,10 +12,10 @@
 		<!-- LOGO & 文字 -->
 		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 			<Image Source="{SvgImage /Assets/fis-logo.svg}" Width="100" Height="100" />
-			<TextBlock Text="一切正常" FontSize="24" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+			<TextBlock Text="月狐卫" FontSize="24" Margin="0,20,0,0" HorizontalAlignment="Center"/>
 
 			<!-- 时间线的背景 -->
-			<Border Background="#70D0D0D0" Width="350" VerticalAlignment="Bottom" CornerRadius="10" Margin="0,40,0,0">
+			<Border Classes="settings-card" Width="350" VerticalAlignment="Bottom" CornerRadius="10" Margin="0,40,0,0">
 				<!-- 纵向堆叠里嵌套横向堆叠 -->
 				<StackPanel>
 					<StackPanel Orientation="Horizontal">
