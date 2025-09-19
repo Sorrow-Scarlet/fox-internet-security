@@ -8,36 +8,146 @@
              x:Class="fox_internet_security.Views.UpdateView">
 
 	<!-- 右侧UI，此为更新 -->
-	<Border Background="#80FFFFFF"  Padding="20" Grid.Column="1" IsHitTestVisible="False">
-		<!-- LOGO & 文字 -->
-		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-			<Image Source="{SvgImage /Assets/fis-logo.svg}" Width="100" Height="100" />
-			<TextBlock Text="更新" FontSize="24" Margin="0,20,0,0" HorizontalAlignment="Center"/>
 
-			<!-- 时间线的背景 -->
-			<Border Background="#70D0D0D0" Width="350" VerticalAlignment="Bottom" CornerRadius="10" Margin="0,40,0,0">
-				<!-- 纵向堆叠里嵌套横向堆叠 -->
-				<StackPanel>
-					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineHead" Content="&#xf6b8;"/>
-						<Label Classes ="akkoTimeLineHead" Content="时间线" FontWeight="Bold"/>
-					</StackPanel>
-					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf4b5;"/>
-						<Label Classes ="akkoTimeLineText" Content="扫描了Test.txt"/>
-					</StackPanel>
-					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf4b5;"/>
-						<Label Classes ="akkoTimeLineText" Content="更新了病毒库"/>
-					</StackPanel>
-					<StackPanel Orientation="Horizontal">
-						<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="iconTimeLineText" Content="&#xf4b5;"/>
-						<Label Classes ="akkoTimeLineText" Content="清空了沙盒"/>
-					</StackPanel>
-				</StackPanel>
+	<Grid RowDefinitions="30,*">
+		<!-- 标题栏区域 -->
+		<Panel Background="#80FFFFFF" IsHitTestVisible="False" Grid.Row="0"></Panel>
+		<!-- 内容区域 -->
+		<ScrollViewer Grid.Row="1"
+					  Background="#80FFFFFF"
+					  Padding="20">
+			<StackPanel Margin="20">
+				<!-- 当前版本卡片 -->
+				<Border Background="#80FFFFFF"
+						CornerRadius="8"
+						Padding="15"
+						Margin="0,0,0,20"
+						BoxShadow="0 2 5 0 #20000000">
+					<Grid ColumnDefinitions="Auto,*,Auto">
+						<TextBlock Text="📦"
+								   FontSize="18"
+								   Margin="0,0,10,0"
+								   VerticalAlignment="Center"/>
 
-			</Border>
-		</StackPanel>
-	</Border>
+						<StackPanel Grid.Column="1">
+							<TextBlock Text="当前版本"
+									   FontWeight="Medium"
+									   Foreground="#333333"/>
+							<TextBlock Text="v2.3.1 (稳定版)"
+									   FontSize="12"
+									   Foreground="#666666"/>
+						</StackPanel>
+
+						<!-- 手动更新按钮 -->
+						<Button Grid.Column="2"
+								Content="更新"
+								Classes="accent"
+								Foreground="White"
+								Padding="10,5"
+								CornerRadius="4"
+								BorderThickness="0"
+								HorizontalAlignment="Right"
+								VerticalAlignment="Center"/>
+					</Grid>
+				</Border>
+
+				<!-- 更新进度 -->
+				<Border Background="#80FFFFFF"
+						CornerRadius="5"
+						Padding="15"
+						Margin="0,0,0,20"
+						BoxShadow="0 2 5 0 #20000000">
+					<StackPanel Spacing="10">
+						<TextBlock Text="更新进度"
+								   FontSize="16"
+								   FontWeight="Medium"
+								   Foreground="#333333"/>
+
+						<ProgressBar Value="65"
+									 Height="20"
+									 Background="#80FFFFFF"
+									 Foreground="{DynamicResource SystemAccentColor}"
+									 CornerRadius="3"/>
+
+						<Grid ColumnDefinitions="*,Auto">
+							<TextBlock Text="正在下载病毒库更新..."
+									   Foreground="#666666"/>
+							<TextBlock Grid.Column="1"
+									   Text="65%"
+									   Foreground="#666666"/>
+						</Grid>
+					</StackPanel>
+				</Border>
+
+				<!-- 更新历史 -->
+				<Border Background="#80FFFFFF"
+						CornerRadius="5"
+						Padding="15"
+						BoxShadow="0 2 5 0 #20000000">
+					<StackPanel Spacing="10">
+						<TextBlock Text="更新历史"
+								   FontSize="16"
+								   FontWeight="Medium"
+								   Foreground="#333333"/>
+
+						<ListBox Background="Transparent"
+								 BorderThickness="0"
+								 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+							<ListBoxItem>
+								<Grid ColumnDefinitions="Auto,*" Width="400">
+									<TextBlock Text="🔄"
+											   FontSize="18"
+											   Margin="0,0,10,0"
+											   VerticalAlignment="Center"/>
+									<StackPanel Grid.Column="1">
+										<TextBlock Text="病毒库更新"
+												   FontWeight="Medium"
+												   Foreground="#333333"/>
+										<TextBlock Text="2023-09-15 14:30 | 2.3MB"
+												   FontSize="12"
+												   Foreground="#999999"/>
+									</StackPanel>
+								</Grid>
+							</ListBoxItem>
+
+							<ListBoxItem>
+								<Grid ColumnDefinitions="Auto,*" Width="400">
+									<TextBlock Text="🔄"
+											   FontSize="18"
+											   Margin="0,0,10,0"
+											   VerticalAlignment="Center"/>
+									<StackPanel Grid.Column="1">
+										<TextBlock Text="引擎更新"
+												   FontWeight="Medium"
+												   Foreground="#333333"/>
+										<TextBlock Text="2023-09-10 09:15 | 5.7MB"
+												   FontSize="12"
+												   Foreground="#999999"/>
+									</StackPanel>
+								</Grid>
+							</ListBoxItem>
+
+							<ListBoxItem>
+								<Grid ColumnDefinitions="Auto,*" Width="400">
+									<TextBlock Text="🔄"
+											   FontSize="18"
+											   Margin="0,0,10,0"
+											   VerticalAlignment="Center"/>
+									<StackPanel Grid.Column="1">
+										<TextBlock Text="程序更新"
+												   FontWeight="Medium"
+												   Foreground="#333333"/>
+										<TextBlock Text="2023-09-01 16:45 | 12.1MB"
+												   FontSize="12"
+												   Foreground="#999999"/>
+									</StackPanel>
+								</Grid>
+							</ListBoxItem>
+						</ListBox>
+					</StackPanel>
+				</Border>
+			</StackPanel>
+		</ScrollViewer>
+	</Grid>
 	
 </UserControl>
