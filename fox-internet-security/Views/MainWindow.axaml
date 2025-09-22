@@ -30,8 +30,8 @@
 			<ExperimentalAcrylicBorder.Material>
 				<ExperimentalAcrylicMaterial
 					TintColor="#FFFFFF"
-					TintOpacity="1"
-					MaterialOpacity="0.1" />
+					TintOpacity="0.8"
+					MaterialOpacity="0" />
 			</ExperimentalAcrylicBorder.Material>
 		</ExperimentalAcrylicBorder>
 		<!-- Grid建两列，经典左右布局，暂时不考虑收缩面板，没有全屏的必要 -->
@@ -39,38 +39,38 @@
 			<ColumnDefinition Width="200"></ColumnDefinition>
 			<ColumnDefinition Width="520"></ColumnDefinition>
 		</Grid.ColumnDefinitions>
-		<!-- 左侧菜单栏 - 灰色背景 -->
-		<Border Background="#70D0D0D0" HorizontalAlignment="Stretch" Width="200" Padding="10" Grid.Column="0">
+		<!-- 左侧菜单栏 - 强调色背景 -->
+		<Border Background="{DynamicResource SystemAccentColor}" HorizontalAlignment="Stretch" Width="200" Padding="10" Grid.Column="0" Opacity="99">
 			<!-- 堆叠排布 -->
 				<StackPanel Spacing="20" VerticalAlignment="Center">
 					<!-- 五个选项的每个按钮-->
 					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToOverviewCommand}">
 						<StackPanel Orientation="Horizontal">
-							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xf7d4;"/>
+							<Label Classes ="icon" Content="&#xf7d4;"/>
 							<Label Classes ="akko" Content="概述"/>
 						</StackPanel>
 					</Button>
 					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToUpdateCommand}" >
 						<StackPanel Orientation="Horizontal">
-							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xe923;"/>
+							<Label Classes ="icon" Content="&#xe923;"/>
 							<Label Classes ="akko" Content="更新"/>
 						</StackPanel>
 					</Button>
 					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToScanCommand}">
 						<StackPanel Orientation="Horizontal">
-							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xf4c9;"/>
+							<Label Classes ="icon" Content="&#xf4c9;"/>
 							<Label Classes ="akko" Content="扫描"/>
 						</StackPanel>
 					</Button>
 					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToToolCommand}">
 						<StackPanel Orientation="Horizontal">
-							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xe149;"/>
+							<Label Classes ="icon" Content="&#xe149;"/>
 							<Label Classes ="akko" Content="工具"/>
 						</StackPanel>
 					</Button>
 					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToSettingCommand}">
 						<StackPanel Orientation="Horizontal">
-							<Label FontFamily="{DynamicResource ResourceKey=MaterialIcons}" Classes ="icon" Content="&#xe8b8;"/>
+							<Label Classes ="icon" Content="&#xe8b8;"/>
 							<Label Classes ="akko" Content="设置"/>
 						</StackPanel>
 					</Button>
