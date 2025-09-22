@@ -22,5 +22,5 @@ namespace fox_internet_security
                 .LogToTrace()
                 .WithInterFont();
         }
-    }   
+    }
 }
