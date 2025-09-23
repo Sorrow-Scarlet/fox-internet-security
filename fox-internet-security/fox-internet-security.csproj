@@ -7,11 +7,13 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
 
-	  <PublishAot>true</PublishAot>
-	  <!-- Recommended Avalonia trimming settings for Native AOT -->
-	  <BuiltInComInteropSupport>false</BuiltInComInteropSupport>
-	  <TrimMode>link</TrimMode>
-	  
+<!--
+暂时注释掉AOT设置，发现编译通过，但预览器报错
+<PublishAot>true</PublishAot>
+<BuiltInComInteropSupport>false</BuiltInComInteropSupport>
+<TrimMode>link</TrimMode>
+-->
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,6 +37,7 @@
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="Svg.Controls.Skia.Avalonia" Version="11.3.6.2" />
+    <PackageReference Include="YaraXSharp" Version="1.0.3.170" />
   </ItemGroup>
 
 	<ItemGroup>

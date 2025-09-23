@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="using:fox_internet_security.ViewModels"
+			 xmlns:view="using:fox_internet_security.Views"
 			 x:DataType="vm:ScanViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="fox_internet_security.Views.ScanView">
@@ -17,19 +18,6 @@
 					  Padding="20">
 			<StackPanel Margin="20">
 
-				<!-- 拖拽区域 -->
-				<Border Background="#FFFFFF"
-						Height="100"
-						Margin="0,0,0,20"
-						Padding="15"
-						CornerRadius="8"
-						BoxShadow="0 2 5 0 #20000000">
-					<TextBlock Text="拖拽文件/文件夹到此处扫描"
-								HorizontalAlignment="Center"
-								VerticalAlignment="Center"
-								FontSize="16"/>
-				</Border>
-
 				<!-- 扫描进度 -->
 				<Border Background="#80FFFFFF"
 						CornerRadius="5"
@@ -37,23 +25,29 @@
 						Margin="0,0,0,20"
 						BoxShadow="0 2 5 0 #20000000">
 					<StackPanel Spacing="10">
-						<TextBlock Text="扫描进度"
+						<TextBlock Text="扫描状态"
 								   FontSize="16"
 								   FontWeight="Medium"
 								   Foreground="#333333"/>
-
 						<ProgressBar Value="42"
-									 Height="20"
-									 Background="#80FFFFFF"
-									 Foreground="{DynamicResource SystemAccentColor}"
-									 CornerRadius="3"/>
+															 Height="20"
+															 Background="#80FFFFFF"
+															 Foreground="{DynamicResource SystemAccentColor}"
+															 CornerRadius="3"/>
+					
 
 						<Grid ColumnDefinitions="*,Auto">
 							<TextBlock Text="正在扫描: C:\Windows\System32\drivers\..."
 									   Foreground="#666666"/>
-							<TextBlock Grid.Column="1"
-									   Text="42%"
-									   Foreground="#666666"/>
+							<!-- 手动更新按钮 -->
+							<Button Content="扫描"
+									Grid.Column="1"
+									Classes="accent"
+									Foreground="White"
+									Padding="10,5"
+									CornerRadius="4"
+									BorderThickness="0"
+								/>
 						</Grid>
 
 						<Grid ColumnDefinitions="*,*,*">
@@ -69,6 +63,7 @@
 									   FontSize="12"
 									   Foreground="#666666"/>
 						</Grid>
+						
 					</StackPanel>
 				</Border>
 
