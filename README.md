@@ -2,8 +2,11 @@
 
 # 月狐卫
 
-![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)
+![Maintenance](https://img.shields.io/badge/Maintained%3F-suspended-orange.svg?style=flat-square)
 ![GNU GPL-V3 License](https://img.shields.io/badge/%20license-GNU%20GPL%20v3-brightgreen.svg?style=flat-square)
+
+> [!IMPORTANT]
+> Avalonia UI 的 Mvvm 设计模式对于这个项目太复杂了，暂时搁置下，等折腾明白了或者用 Code Behind 做吧
 
 基于 Avalonia UI 的、简单、能用的安全软件
 
@@ -11,7 +14,7 @@
 
 # 大饼
 
-- [ ] UI
+- [x] UI
 - [ ] yara 扫描器
 - [ ] VirusTotal 云扫描
 - [ ] 邮件实时扫描
