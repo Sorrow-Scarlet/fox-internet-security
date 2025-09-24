@@ -1,158 +1,190 @@
-<UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:vm="using:fox_internet_security.ViewModels"
-			 x:DataType="vm:ToolViewModel"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="fox_internet_security.Views.ToolView">
+<UserControl
+	x:Class="fox_internet_security.Views.ToolView"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:vm="using:fox_internet_security.ViewModels"
+	d:DesignHeight="450"
+	d:DesignWidth="800"
+	x:DataType="vm:ToolViewModel"
+	mc:Ignorable="d">
 
 
-	<!-- 右侧UI，此为工具页面 -->
+	<!--  右侧UI，此为工具页面  -->
 	<Grid RowDefinitions="30,*">
-		<!-- 标题栏区域 -->
-		<Panel Background="#80FFFFFF" IsHitTestVisible="False" Grid.Row="0"></Panel>
+		<!--  标题栏区域  -->
+		<Panel
+			Grid.Row="0"
+			Background="#80FFFFFF"
+			IsHitTestVisible="False" />
 
-		<!-- 内容区域 -->
-		<ScrollViewer Grid.Row="1"
-					  Background="#80FFFFFF"
-					  Padding="20">
+		<!--  内容区域  -->
+		<ScrollViewer
+			Grid.Row="1"
+			Padding="20"
+			Background="#80FFFFFF">
 			<StackPanel Margin="20">
-				<!-- 工具卡片容器 -->
-				<Border Background="#80FFFFFF"
-						CornerRadius="8"
-						Padding="15"
-						Margin="0,0,0,20"
-						BoxShadow="0 2 5 0 #20000000">
+				<!--  工具卡片容器  -->
+				<Border
+					Margin="0,0,0,20"
+					Padding="15"
+					Background="#80FFFFFF"
+					BoxShadow="0 2 5 0 #20000000"
+					CornerRadius="8">
 					<StackPanel>
 
-						<!-- 工具卡片列表 -->
+						<!--  工具卡片列表  -->
 						<StackPanel Spacing="15">
-							<!-- 工具卡片1：系统清理 -->
-							<Border Background="#F5F5F5"
-									CornerRadius="6"
-									Padding="15">
+							<!--  工具卡片1：系统清理  -->
+							<Border
+								Padding="15"
+								Background="#F5F5F5"
+								CornerRadius="6">
 								<Grid ColumnDefinitions="Auto,*,Auto">
-									<!-- 工具图标 -->
-									<TextBlock Text="🧹"
-											  FontSize="24"
-											  VerticalAlignment="Center"/>
+									<!--  工具图标  -->
+									<TextBlock
+										VerticalAlignment="Center"
+										FontSize="24"
+										Text="🧹" />
 
-									<!-- 工具信息 -->
+									<!--  工具信息  -->
 									<StackPanel Grid.Column="1" Margin="15,0">
-										<TextBlock Text="系统清理"
-												   FontWeight="Medium"
-												   FontSize="16"
-												   Foreground="#333333"/>
-										<TextBlock Text="清理垃圾文件和临时数据"
-												   FontSize="13"
-												   Foreground="#666666"
-												   Margin="0,3"/>
+										<TextBlock
+											FontSize="16"
+											FontWeight="Medium"
+											Foreground="#333333"
+											Text="系统清理" />
+										<TextBlock
+											Margin="0,3"
+											FontSize="13"
+											Foreground="#666666"
+											Text="清理垃圾文件和临时数据" />
 									</StackPanel>
 
-									<!-- 操作按钮 -->
-									<Button Grid.Column="2"
-											Content="立即扫描"
-											Classes="accent"
-											HorizontalAlignment="Right"
-											VerticalAlignment="Center"/>
+									<!--  操作按钮  -->
+									<Button
+										Grid.Column="2"
+										HorizontalAlignment="Right"
+										VerticalAlignment="Center"
+										Classes="accent"
+										Content="立即扫描" />
 								</Grid>
 							</Border>
 
-							<!-- 工具卡片2：启动项管理 -->
-							<Border Background="#F5F5F5"
-									CornerRadius="6"
-									Padding="15">
+							<!--  工具卡片2：启动项管理  -->
+							<Border
+								Padding="15"
+								Background="#F5F5F5"
+								CornerRadius="6">
 								<Grid ColumnDefinitions="Auto,*,Auto">
-									<!-- 工具图标 -->
-									<TextBlock Text="🚀"
-											  FontSize="24"
-											  VerticalAlignment="Center"/>
+									<!--  工具图标  -->
+									<TextBlock
+										VerticalAlignment="Center"
+										FontSize="24"
+										Text="🚀" />
 
-									<!-- 工具信息 -->
+									<!--  工具信息  -->
 									<StackPanel Grid.Column="1" Margin="15,0">
-										<TextBlock Text="启动项管理"
-												   FontWeight="Medium"
-												   FontSize="16"
-												   Foreground="#333333"/>
-										<TextBlock Text="管理系统开机启动项"
-												   FontSize="13"
-												   Foreground="#666666"
-												   Margin="0,3"/>
+										<TextBlock
+											FontSize="16"
+											FontWeight="Medium"
+											Foreground="#333333"
+											Text="启动项管理" />
+										<TextBlock
+											Margin="0,3"
+											FontSize="13"
+											Foreground="#666666"
+											Text="管理系统开机启动项" />
 									</StackPanel>
 
-									<!-- 状态指示器 -->
-									<StackPanel Grid.Column="2"
-												Orientation="Horizontal"
-												Spacing="5"
-												HorizontalAlignment="Right"
-												VerticalAlignment="Center">
-										<Ellipse Width="8" Height="8" Fill="#4CAF50"/>
-										<TextBlock Text="已启用"
-												   FontSize="12"
-												   Foreground="#4CAF50"/>
+									<!--  状态指示器  -->
+									<StackPanel
+										Grid.Column="2"
+										HorizontalAlignment="Right"
+										VerticalAlignment="Center"
+										Orientation="Horizontal"
+										Spacing="5">
+										<Ellipse
+											Width="8"
+											Height="8"
+											Fill="#4CAF50" />
+										<TextBlock
+											FontSize="12"
+											Foreground="#4CAF50"
+											Text="已启用" />
 									</StackPanel>
 								</Grid>
 							</Border>
 
-							<!-- 工具卡片3：网络防护 -->
-							<Border Background="#F5F5F5"
-									CornerRadius="6"
-									Padding="15">
+							<!--  工具卡片3：网络防护  -->
+							<Border
+								Padding="15"
+								Background="#F5F5F5"
+								CornerRadius="6">
 								<Grid ColumnDefinitions="Auto,*,Auto">
-									<!-- 工具图标 -->
-									<TextBlock Text="🛡️"
-											  FontSize="24"
-											  VerticalAlignment="Center"/>
+									<!--  工具图标  -->
+									<TextBlock
+										VerticalAlignment="Center"
+										FontSize="24"
+										Text="🛡️" />
 
-									<!-- 工具信息 -->
+									<!--  工具信息  -->
 									<StackPanel Grid.Column="1" Margin="15,0">
-										<TextBlock Text="网络防护"
-												   FontWeight="Medium"
-												   FontSize="16"
-												   Foreground="#333333"/>
-										<TextBlock Text="监控网络连接和威胁"
-												   FontSize="13"
-												   Foreground="#666666"
-												   Margin="0,3"/>
+										<TextBlock
+											FontSize="16"
+											FontWeight="Medium"
+											Foreground="#333333"
+											Text="网络防护" />
+										<TextBlock
+											Margin="0,3"
+											FontSize="13"
+											Foreground="#666666"
+											Text="监控网络连接和威胁" />
 									</StackPanel>
 
-									<!-- 开关控件 -->
-									<ToggleSwitch Grid.Column="2"
-												  IsChecked="True"
-												  HorizontalAlignment="Right"
-												  VerticalAlignment="Center"/>
+									<!--  开关控件  -->
+									<ToggleSwitch
+										Grid.Column="2"
+										HorizontalAlignment="Right"
+										VerticalAlignment="Center"
+										IsChecked="True" />
 								</Grid>
 							</Border>
 
-							<!-- 工具卡片4：隐私保护 -->
-							<Border Background="#F5F5F5"
-									CornerRadius="6"
-									Padding="15">
+							<!--  工具卡片4：隐私保护  -->
+							<Border
+								Padding="15"
+								Background="#F5F5F5"
+								CornerRadius="6">
 								<Grid ColumnDefinitions="Auto,*,Auto">
-									<!-- 工具图标 -->
-									<TextBlock Text="🔒"
-											  FontSize="24"
-											  VerticalAlignment="Center"/>
+									<!--  工具图标  -->
+									<TextBlock
+										VerticalAlignment="Center"
+										FontSize="24"
+										Text="🔒" />
 
-									<!-- 工具信息 -->
+									<!--  工具信息  -->
 									<StackPanel Grid.Column="1" Margin="15,0">
-										<TextBlock Text="隐私保护"
-												   FontWeight="Medium"
-												   FontSize="16"
-												   Foreground="#333333"/>
-										<TextBlock Text="保护敏感数据和隐私信息"
-												   FontSize="13"
-												   Foreground="#666666"
-												   Margin="0,3"/>
+										<TextBlock
+											FontSize="16"
+											FontWeight="Medium"
+											Foreground="#333333"
+											Text="隐私保护" />
+										<TextBlock
+											Margin="0,3"
+											FontSize="13"
+											Foreground="#666666"
+											Text="保护敏感数据和隐私信息" />
 									</StackPanel>
 
-									<!-- 操作按钮 -->
-									<Button Grid.Column="2"
-											Content="配置"
-											Classes="default"
-											HorizontalAlignment="Right"
-											VerticalAlignment="Center"/>
+									<!--  操作按钮  -->
+									<Button
+										Grid.Column="2"
+										HorizontalAlignment="Right"
+										VerticalAlignment="Center"
+										Classes="default"
+										Content="配置" />
 								</Grid>
 							</Border>
 						</StackPanel>
@@ -161,6 +193,6 @@
 			</StackPanel>
 		</ScrollViewer>
 	</Grid>
-	
+
 
 </UserControl>

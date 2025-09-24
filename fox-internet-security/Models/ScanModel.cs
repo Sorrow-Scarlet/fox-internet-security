@@ -1,7 +1,5 @@
-﻿using fox_internet_security.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using YaraXSharp;
 
 namespace fox_internet_security.Models
 {

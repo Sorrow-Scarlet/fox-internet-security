@@ -1,72 +1,69 @@
-<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <Design.PreviewWith>
-    <Border Padding="20">
-      <!-- Add Controls for Previewer Here -->
-    </Border>
-  </Design.PreviewWith>
+<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<!--  Add Controls for Previewer Here  -->
+		</Border>
+	</Design.PreviewWith>
 
-  <!-- Add Styles Here -->
-	<Style Selector="Window">
-
-	</Style>
+	<!--  Add Styles Here  -->
+	<Style Selector="Window" />
 	<Style Selector="Button.sideMenu">
-		<Setter Property="FontSize" Value="20"/>
-		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="FontWeight" Value="Normal"/>
+		<Setter Property="FontSize" Value="20" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="FontWeight" Value="Normal" />
 	</Style>
 	<Style Selector="Button">
-		<Setter Property="FontSize" Value="20"/>
-		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="FontWeight" Value="Normal"/>
+		<Setter Property="FontSize" Value="20" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="FontWeight" Value="Normal" />
 	</Style>
 	<Style Selector="Label.icon">
-		<Setter Property="FontFamily" Value="{DynamicResource ResourceKey=MaterialIcons}"/>
-		<Setter Property="VerticalAlignment" Value="Center"/>
-		<Setter Property="FontSize" Value="20"/>
-		<Setter Property="FontWeight" Value="Heavy"/>
-		<Setter Property="Margin" Value="35,0,0,0"/>
+		<Setter Property="FontFamily" Value="{DynamicResource ResourceKey=MaterialIcons}" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="FontSize" Value="20" />
+		<Setter Property="FontWeight" Value="Heavy" />
+		<Setter Property="Margin" Value="35,0,0,0" />
 	</Style>
 	<Style Selector="Label.akkoTimeLineHead">
-		<Setter Property="FontFamily" Value="{DynamicResource ResourceKey=MaterialIcons}"/>
-		<Setter Property="VerticalAlignment" Value="Center"/>
-		<Setter Property="FontSize" Value="20"/>
+		<Setter Property="FontFamily" Value="{DynamicResource ResourceKey=MaterialIcons}" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="FontSize" Value="20" />
 	</Style>
 	<Style Selector="Label.akkoTimeLineText">
-		<Setter Property="VerticalAlignment" Value="Center"/>
-		<Setter Property="FontSize" Value="18"/>
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="FontSize" Value="18" />
 	</Style>
 	<Style Selector="Label.iconTimeLineHead">
-		<Setter Property="FontFamily" Value="{DynamicResource ResourceKey=MaterialIcons}"/>
-		<Setter Property="VerticalAlignment" Value="Center"/>
-		<Setter Property="FontSize" Value="20"/>
-		<Setter Property="FontWeight" Value="Heavy"/>
+		<Setter Property="FontFamily" Value="{DynamicResource ResourceKey=MaterialIcons}" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="FontSize" Value="20" />
+		<Setter Property="FontWeight" Value="Heavy" />
 	</Style>
 	<Style Selector="Label.iconTimeLineText">
-		<Setter Property="VerticalAlignment" Value="Center"/>
-		<Setter Property="FontSize" Value="18"/>
-		<Setter Property="FontWeight" Value="Heavy"/>
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="FontSize" Value="18" />
+		<Setter Property="FontWeight" Value="Heavy" />
 	</Style>
 
 	<Style Selector="Border.settings-card">
-		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltHighBrush}"/>
-		<Setter Property="CornerRadius" Value="8"/>
-		<Setter Property="Padding" Value="20"/>
-		<Setter Property="BoxShadow" Value="0 2 8 0 #20000000"/>
+		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltHighBrush}" />
+		<Setter Property="CornerRadius" Value="5" />
+		<Setter Property="Padding" Value="20" />
+		<Setter Property="BoxShadow" Value="0 2 8 0 #20000000" />
 	</Style>
 
 	<Style Selector="TextBlock.section-title">
-		<Setter Property="FontSize" Value="16"/>
-		<Setter Property="FontWeight" Value="Medium"/>
-		<Setter Property="Margin" Value="0,0,0,5"/>
+		<Setter Property="FontSize" Value="16" />
+		<Setter Property="FontWeight" Value="Medium" />
+		<Setter Property="Margin" Value="0,0,0,5" />
 	</Style>
 
 	<Style Selector="Button.accent">
-		<Setter Property="Background" Value="{DynamicResource SystemAccentColor}"/>
-		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="Background" Value="{DynamicResource SystemAccentColor}" />
+		<Setter Property="Foreground" Value="White" />
 	</Style>
 
 	<Style Selector="Button:pointerover.accent">
-		<Setter Property="Background" Value="{DynamicResource SystemAccentColorLight1}"/>
+		<Setter Property="Background" Value="{DynamicResource SystemAccentColorLight1}" />
 	</Style>
 </Styles>
