@@ -1,150 +1,149 @@
-<UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:vm="using:fox_internet_security.ViewModels"
-			 x:DataType="vm:ScanViewModel"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="fox_internet_security.Views.ScanView">
+<UserControl
+	x:Class="fox_internet_security.Views.ScanView"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:view="using:fox_internet_security.Views"
+	xmlns:vm="using:fox_internet_security.ViewModels"
+	d:DesignHeight="450"
+	d:DesignWidth="800"
+	x:DataType="vm:ScanViewModel"
+	mc:Ignorable="d">
 
-	<!-- 右侧UI，此为扫描界面 -->
+	<!--  右侧UI，此为扫描界面  -->
 	<Grid RowDefinitions="30,*">
-		<!-- 标题栏区域 -->
-		<Panel Background="#80FFFFFF" IsHitTestVisible="False" Grid.Row="0"></Panel>
-		<!-- 内容区域 -->
-		<ScrollViewer Grid.Row="1"
-					  Background="#80FFFFFF"
-					  Padding="20">
+		<!--  标题栏区域  -->
+		<Panel
+			Grid.Row="0"
+			Background="#80FFFFFF"
+			IsHitTestVisible="False" />
+		<!--  内容区域  -->
+		<ScrollViewer
+			Grid.Row="1"
+			Padding="20"
+			Background="#80FFFFFF">
 			<StackPanel Margin="20">
 
-				<!-- 拖拽区域 -->
-				<Border Background="#FFFFFF"
-						Height="100"
-						Margin="0,0,0,20"
-						Padding="15"
-						CornerRadius="8"
-						BoxShadow="0 2 5 0 #20000000">
-					<TextBlock Text="拖拽文件/文件夹到此处扫描"
-								HorizontalAlignment="Center"
-								VerticalAlignment="Center"
-								FontSize="16"/>
-				</Border>
-
-				<!-- 扫描进度 -->
-				<Border Background="#80FFFFFF"
-						CornerRadius="5"
-						Padding="15"
-						Margin="0,0,0,20"
-						BoxShadow="0 2 5 0 #20000000">
+				<!--  扫描进度  -->
+				<Border
+					Margin="0,0,0,20"
+					Padding="15"
+					Background="#80FFFFFF"
+					BoxShadow="0 2 5 0 #20000000"
+					CornerRadius="5">
 					<StackPanel Spacing="10">
-						<TextBlock Text="扫描进度"
-								   FontSize="16"
-								   FontWeight="Medium"
-								   Foreground="#333333"/>
+						<TextBlock
+							FontSize="16"
+							FontWeight="Medium"
+							Foreground="#333333"
+							Text="扫描状态" />
+						<ProgressBar
+							Height="20"
+							Background="#80FFFFFF"
+							CornerRadius="5"
+							Foreground="{DynamicResource SystemAccentColor}"
+							Value="42" />
 
-						<ProgressBar Value="42"
-									 Height="20"
-									 Background="#80FFFFFF"
-									 Foreground="{DynamicResource SystemAccentColor}"
-									 CornerRadius="3"/>
 
 						<Grid ColumnDefinitions="*,Auto">
-							<TextBlock Text="正在扫描: C:\Windows\System32\drivers\..."
-									   Foreground="#666666"/>
-							<TextBlock Grid.Column="1"
-									   Text="42%"
-									   Foreground="#666666"/>
+							<TextBlock Foreground="#666666" Text="正在扫描: C:\Windows\System32\drivers\..." />
+							<!--  手动更新按钮  -->
+							<Button
+								Grid.Column="1"
+								Padding="10,5"
+								BorderThickness="0"
+								Classes="accent"
+								Content="扫描"
+								CornerRadius="5"
+								Foreground="White" />
 						</Grid>
 
 						<Grid ColumnDefinitions="*,*,*">
-							<TextBlock Text="已扫描: 8,542 个文件"
-									   FontSize="12"
-									   Foreground="#666666"/>
-							<TextBlock Grid.Column="1"
-									   Text="发现威胁: 0"
-									   FontSize="12"
-									   Foreground="#666666"/>
-							<TextBlock Grid.Column="2"
-									   Text="剩余时间: 12分钟"
-									   FontSize="12"
-									   Foreground="#666666"/>
+							<TextBlock
+								FontSize="12"
+								Foreground="#666666"
+								Classes="ScanScanedFile"
+								Text="已扫描: 8,542 个文件" />
+							<TextBlock
+								Grid.Column="1"
+								FontSize="12"
+								Foreground="#666666"
+								Classes="ScanThreatFound"
+								Text="发现威胁: 0" />
+							<TextBlock
+								Grid.Column="2"
+								FontSize="12"
+								Foreground="#666666"
+								Classes="ScanTimeLeft"
+								Text="剩余时间: 12分钟" />
 						</Grid>
+
 					</StackPanel>
 				</Border>
 
-				<!-- 扫描结果 -->
-				<Border Background="#80FFFFFF"
-						CornerRadius="5"
-						Padding="15"
-						BoxShadow="0 2 5 0 #20000000">
+				<!--  扫描结果  -->
+				<Border
+					Padding="15"
+					Margin="0,0,0,20"
+					Background="#80FFFFFF"
+					BoxShadow="0 2 5 0 #20000000"
+					CornerRadius="5">
 					<StackPanel Spacing="10">
-						<TextBlock Text="扫描结果"
-								   FontSize="16"
-								   FontWeight="Medium"
-								   Foreground="#333333"/>
+						<TextBlock
+							FontSize="16"
+							FontWeight="Medium"
+							Foreground="#333333"
+							Text="扫描结果" />
+					
+							<ListBox
+								Background="Transparent"
+								BorderThickness="0"
+								ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+								<!--  威胁项示例  -->
 
-						<ListBox Background="Transparent"
-								 BorderThickness="0"
-								 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-							<!-- 威胁项示例 -->
+
+
+							
 							<ListBoxItem>
-								<Grid ColumnDefinitions="Auto,*" Width="400">
-									<TextBlock Text="⚠️"
-											   FontSize="18"
-											   Margin="0,0,10,0"
-											   VerticalAlignment="Center"/>
+								<Grid Width="400" ColumnDefinitions="Auto,*">
+	
 									<StackPanel Grid.Column="1">
-										<TextBlock Text="检测到潜在威胁"
-												   FontWeight="Medium"
-												   Foreground="#D32F2F"/>
-										<TextBlock Text="C:\Users\Downloads\suspicious.exe"
-												   FontSize="12"
-												   Foreground="#999999"/>
+										<TextBlock
+											FontWeight="Medium"
+											Foreground="#D32F2F"
+											Text="检测到潜在威胁" />
+										<TextBlock
+											FontSize="12"
+											Foreground="#999999"
+											Text="C:\Users\Downloads\suspicious.exe" />
 									</StackPanel>
 								</Grid>
 							</ListBoxItem>
 
-							<!-- 安全文件示例 -->
+							<!--  安全文件示例  -->
 							<ListBoxItem>
-								<Grid ColumnDefinitions="Auto,*" Width="400">
-									<TextBlock Text="✅"
-											   FontSize="18"
-											   Margin="0,0,10,0"
-											   VerticalAlignment="Center"/>
-									<StackPanel Grid.Column="1">
-										<TextBlock Text="文件安全"
-												   FontWeight="Medium"
-												   Foreground="#388E3C"/>
-										<TextBlock Text="C:\Windows\explorer.exe"
-												   FontSize="12"
-												   Foreground="#999999"/>
-									</StackPanel>
-								</Grid>
-							</ListBoxItem>
+								<Grid Width="400" ColumnDefinitions="Auto,*">
 
-							<!-- 扫描中文件示例 -->
-							<ListBoxItem>
-								<Grid ColumnDefinitions="Auto,*" Width="400">
-									<TextBlock Text="🔄"
-											   FontSize="18"
-											   Margin="0,0,10,0"
-											   VerticalAlignment="Center"/>
 									<StackPanel Grid.Column="1">
-										<TextBlock Text="正在扫描"
-												   FontWeight="Medium"
-												   Foreground="#1976D2"/>
-										<TextBlock Text="C:\Program Files\...\application.dll"
-												   FontSize="12"
-												   Foreground="#999999"/>
+										<TextBlock
+											FontWeight="Medium"
+											Foreground="#388E3C"
+											Text="文件安全" />
+										<TextBlock
+											FontSize="12"
+											Foreground="#999999"
+											Text="C:\Windows\explorer.exe" />
 									</StackPanel>
 								</Grid>
 							</ListBoxItem>
 						</ListBox>
+					
 					</StackPanel>
 				</Border>
 			</StackPanel>
 		</ScrollViewer>
 	</Grid>
-	
-	
+
+
 </UserControl>

@@ -1,84 +1,110 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:fox_internet_security.ViewModels"
-		xmlns:view="using:fox_internet_security.Views"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="720" d:DesignHeight="450"
-		Width="720" Height="450"
-        x:Class="fox_internet_security.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/fis-logo.ico"
-		TransparencyLevelHint="AcrylicBlur"
-        Background="Transparent"
-        Title="fox_internet_security"
-        ExtendClientAreaToDecorationsHint="True"
-		CanResize="False"
-		>
+<Window
+	x:Class="fox_internet_security.Views.MainWindow"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:view="using:fox_internet_security.Views"
+	xmlns:vm="using:fox_internet_security.ViewModels"
+	Title="fox_internet_security"
+	Width="720"
+	Height="450"
+	d:DesignHeight="450"
+	d:DesignWidth="720"
+	x:DataType="vm:MainWindowViewModel"
+	Background="Transparent"
+	CanResize="False"
+	ExtendClientAreaToDecorationsHint="True"
+	Icon="/Assets/fis-logo.ico"
+	TransparencyLevelHint="AcrylicBlur"
+	mc:Ignorable="d">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+	<Design.DataContext>
+		<!--
+			This only sets the DataContext for the previewer in an IDE,
+			to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+		-->
+		<vm:MainWindowViewModel />
+	</Design.DataContext>
 
 
-	<!--布局-->
+	<!--  布局  -->
 	<Grid>
-		<!--云母-->
+		<!--  云母  -->
 		<ExperimentalAcrylicBorder IsHitTestVisible="False">
 			<ExperimentalAcrylicBorder.Material>
 				<ExperimentalAcrylicMaterial
+					MaterialOpacity="0"
 					TintColor="#FFFFFF"
-					TintOpacity="0.8"
-					MaterialOpacity="0" />
+					TintOpacity="0.8" />
 			</ExperimentalAcrylicBorder.Material>
 		</ExperimentalAcrylicBorder>
-		<!-- Grid建两列，经典左右布局，暂时不考虑收缩面板，没有全屏的必要 -->
+		<!--  Grid建两列，经典左右布局，暂时不考虑收缩面板，没有全屏的必要  -->
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="200"></ColumnDefinition>
-			<ColumnDefinition Width="520"></ColumnDefinition>
+			<ColumnDefinition Width="200" />
+			<ColumnDefinition Width="520" />
 		</Grid.ColumnDefinitions>
-		<!-- 左侧菜单栏 - 强调色背景 -->
-		<Border Background="{DynamicResource SystemAccentColor}" HorizontalAlignment="Stretch" Width="200" Padding="10" Grid.Column="0" Opacity="99">
-			<!-- 堆叠排布 -->
-				<StackPanel Spacing="20" VerticalAlignment="Center">
-					<!-- 五个选项的每个按钮-->
-					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToOverviewCommand}">
-						<StackPanel Orientation="Horizontal">
-							<Label Classes ="icon" Content="&#xf7d4;"/>
-							<Label Classes ="akko" Content="概述"/>
-						</StackPanel>
-					</Button>
-					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToUpdateCommand}" >
-						<StackPanel Orientation="Horizontal">
-							<Label Classes ="icon" Content="&#xe923;"/>
-							<Label Classes ="akko" Content="更新"/>
-						</StackPanel>
-					</Button>
-					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToScanCommand}">
-						<StackPanel Orientation="Horizontal">
-							<Label Classes ="icon" Content="&#xf4c9;"/>
-							<Label Classes ="akko" Content="扫描"/>
-						</StackPanel>
-					</Button>
-					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToToolCommand}">
-						<StackPanel Orientation="Horizontal">
-							<Label Classes ="icon" Content="&#xe149;"/>
-							<Label Classes ="akko" Content="工具"/>
-						</StackPanel>
-					</Button>
-					<Button Classes="sideMenu" HorizontalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.GoToSettingCommand}">
-						<StackPanel Orientation="Horizontal">
-							<Label Classes ="icon" Content="&#xe8b8;"/>
-							<Label Classes ="akko" Content="设置"/>
-						</StackPanel>
-					</Button>
-				</StackPanel>
+		<!--  左侧菜单栏 - 强调色背景  -->
+		<Border
+			Grid.Column="0"
+			Width="200"
+			Padding="10"
+			HorizontalAlignment="Stretch"
+			Background="{DynamicResource SystemAccentColor}"
+			Opacity="99">
+			<!--  堆叠排布  -->
+			<StackPanel VerticalAlignment="Center" Spacing="20">
+				<!--  五个选项的每个按钮  -->
+				<Button
+					HorizontalAlignment="Stretch"
+					Classes="sideMenu"
+					Command="{Binding $parent[Window].DataContext.GoToOverviewCommand}">
+					<StackPanel Orientation="Horizontal">
+						<Label Classes="icon" Content="&#xf7d4;" />
+						<Label Classes="akko" Content="概述" />
+					</StackPanel>
+				</Button>
+				<Button
+					HorizontalAlignment="Stretch"
+					Classes="sideMenu"
+					Command="{Binding $parent[Window].DataContext.GoToUpdateCommand}">
+					<StackPanel Orientation="Horizontal">
+						<Label Classes="icon" Content="&#xe923;" />
+						<Label Classes="akko" Content="更新" />
+					</StackPanel>
+				</Button>
+				<Button
+					HorizontalAlignment="Stretch"
+					Classes="sideMenu"
+					Command="{Binding $parent[Window].DataContext.GoToScanCommand}">
+					<StackPanel Orientation="Horizontal">
+						<Label Classes="icon" Content="&#xf4c9;" />
+						<Label Classes="akko" Content="扫描" />
+					</StackPanel>
+				</Button>
+				<Button
+					HorizontalAlignment="Stretch"
+					Classes="sideMenu"
+					Command="{Binding $parent[Window].DataContext.GoToToolCommand}">
+					<StackPanel Orientation="Horizontal">
+						<Label Classes="icon" Content="&#xe149;" />
+						<Label Classes="akko" Content="工具" />
+					</StackPanel>
+				</Button>
+				<Button
+					HorizontalAlignment="Stretch"
+					Classes="sideMenu"
+					Command="{Binding $parent[Window].DataContext.GoToSettingCommand}">
+					<StackPanel Orientation="Horizontal">
+						<Label Classes="icon" Content="&#xe8b8;" />
+						<Label Classes="akko" Content="设置" />
+					</StackPanel>
+				</Button>
+			</StackPanel>
 		</Border>
-		
-		<!-- 右侧主内容区, -->
-		<ContentControl Grid.Column="1" Content="{Binding CurrentPage}"/>
-		
+
+		<!--  右侧主内容区,  -->
+		<ContentControl Grid.Column="1" Content="{Binding CurrentPage}" />
+
 	</Grid>
 </Window>

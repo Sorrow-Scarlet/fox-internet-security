@@ -1,8 +1,16 @@
-﻿namespace fox_internet_security.ViewModels
+﻿using CommunityToolkit.Mvvm.Input;
+
+namespace fox_internet_security.ViewModels
 {
     public partial class ScanViewModel : ViewModelBase
     {
-        public string ScanView { get; set; } = "扫描";
+
+
+        [RelayCommand]
+        private void DoFileScan()
+        {
+
+        }
 
     }
 }
